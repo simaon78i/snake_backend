@@ -15,7 +15,7 @@ const pool = new Pool({
 // GET: Fetch top 10 scores
 app.get('/api/scores', async (req, res) => {
     try {
-        const result = await pool.query('SELECT first_name, last_name, score FROM high_scores ORDER BY score DESC LIMIT 10');
+        const result = await pool.query('SELECT first_name, last_name, score FROM high_scores ORDER BY score DESC LIMIT 3');
         res.json(result.rows);
     } catch (err) {
         console.error(err);
